@@ -40,6 +40,10 @@ const authController = {
         catch (err){
             return res.json({Error: "Internal Server ERROR"})
         }
+    },
+
+    SignIN: async (req, res) => {
+
     }
 }
 
