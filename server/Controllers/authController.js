@@ -9,9 +9,35 @@ const authController = {
             const {username, email, password} = req.body
             // chech user is already exists
             const isUserExists = await User.findOne({username, email})
-        }
-        catch {
 
+            if(isUserExists){
+                return res.json({Error: "User is Already Exists"})
+            }
+            // hash password
+            const hashPass = await bcrypt.hash(password, 10);
+
+            // create user
+
+            const NewUser = new User({
+                username,
+                email,
+                password: hashPass,
+                Role: "User"
+            })
+
+            // save user
+            const ReusltUser = await NewUser.save()
+
+            if(ReusltUser) {
+                return res.json({Status: "Success"})
+            }
+            else{
+                return res.json({Error: "Internal Server ERROR"})
+            }
+            
+        }
+        catch (err){
+            return res.json({Error: "Internal Server ERROR"})
         }
     }
 }
