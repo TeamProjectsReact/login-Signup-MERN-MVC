@@ -11,6 +11,7 @@ export default function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Dashboard" element={<PrivateRoute ProtectRoute={<Dashboard />}/>} />
+        <Route path="/Student" element={<PrivateRoute ProtectRoute={<Students />} />} />
       </Routes>   
     </BrowserRouter>
   )
