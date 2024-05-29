@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 const SignUp = () => {
+    const navigate = useNavigate()
      // for login data
     const [SignUpData, SetSignUpData] = useState({
         username: '',
@@ -14,8 +16,17 @@ const SignUp = () => {
     const headleSubmit = (e) => {
         e.preventDefault();
 
-        // signup to system
-        // this will be updated in future versions
+        axios.post('http://localhost:5000/auth/signUp', SignUpData)
+        .then(res => {
+            if(res.data.Status === "Success"){
+                alert("User Registation Successfully")
+                navigate('/')
+            }
+            else{
+                alert(res.data.Error)
+            }
+        })
+
     }
   return (
     <div className='bg-gray-200 min-h-screen py-24 px-8'>
