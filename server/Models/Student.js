@@ -21,8 +21,9 @@ const studentSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }   
-
-
-
+    }
 })
+
+const Student = new mongoose.model('Student', studentSchema)
+
+module.exports = Student
