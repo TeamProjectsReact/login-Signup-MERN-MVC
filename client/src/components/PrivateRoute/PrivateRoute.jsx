@@ -9,7 +9,7 @@ const PrivateRoute = ({ ProtectRoute }) => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("login2");
 
-    if(loginToken !== null && EmailUser !== null && RoleUser !== null){
+    if(loginToken !== null || EmailUser !== null  || RoleUser !== null){
         return (
             ProtectRoute
         )
