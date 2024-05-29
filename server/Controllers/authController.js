@@ -58,8 +58,14 @@ const authController = {
         if(!passMatch) {
             return res.json({Error: "Password Not Match"})
         }
-
+        else{
+            // create a token for login
+            const token = jwt.sign({ userId: user._id, userEmail: user.email, userRole: user.Role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        }
         
+
+
+       
 
     }
 }
