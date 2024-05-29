@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import  secureLocalStorage  from  "react-secure-storage";
 
 const SignIn = () => {
     const navigate =  useNavigate()
@@ -22,6 +23,9 @@ const SignIn = () => {
                     alert("Login Successfull")
                     localStorage.setItem('token', res.data.Token)
                     navigate('/Dashboard')
+                    // login user Email 
+                    secureLocalStorage.setItem('Login1', res.data.Result[0].email)
+                    secureLocalStorage.setItem('Login2', res.data.Result[0].Role)                    
                 }
                 else{
                     alert(res.data.Error)

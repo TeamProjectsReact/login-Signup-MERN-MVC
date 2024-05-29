@@ -62,7 +62,7 @@ const authController = {
             // create a token for login
             const token = jwt.sign({ userId: checkuser._id, userEmail: checkuser.email, userRole: checkuser.Role }, process.env.JWT_SECRET, { expiresIn: '1h' });
             
-            return res.json({Status: "Success", Token:token})            
+            return res.json({Status: "Success", Token:token, Result: checkuser})            
         }
      
     }
