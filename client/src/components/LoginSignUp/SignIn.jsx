@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignIn = () => {
+    const navigate =  useNavigate()
     // for login data
     const [LoginData, SetLoginData] = useState({
         email: '',
@@ -19,12 +20,16 @@ const SignIn = () => {
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Login Successfull")
-                    
+                    localStorage.setItem('token', res.data.Token)
+                    navigate('/Dashboard')
+                }
+                else{
+                    alert(res.data.Error)
                 }
             })
         }
-        catch{
-
+        catch (err){
+            console.log(err)
         }
     }
   return (
