@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios';
 import  secureLocalStorage  from  "react-secure-storage";
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const PrivateRoute = ({ ProtectRoute }) => {
     const navigate = useNavigate()
@@ -15,7 +15,11 @@ const PrivateRoute = ({ ProtectRoute }) => {
         )
     }
     else{
-        localStorage.clear()
+        useEffect(() => {
+            localStorage.clear()
+            window.location.reload()
+            navigate('/')
+        }, [])
     }
 }
 
