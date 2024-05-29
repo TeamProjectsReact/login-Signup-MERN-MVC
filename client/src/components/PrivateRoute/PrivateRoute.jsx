@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 
 const PrivateRoute = ({ ProtectRoute }) => {
     const navigate = useNavigate()
+    const loginToken = localStorage.getItem("token");
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("login2");
 
-    if(EmailUser !== null && RoleUser !== null){
+    if(loginToken !== null && EmailUser !== null && RoleUser !== null){
         return (
             ProtectRoute
         )
