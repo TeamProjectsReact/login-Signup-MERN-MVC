@@ -3,6 +3,8 @@ import SignIn from "./components/LoginSignUp/SignIn";
 import SignUp from "./components/LoginSignUp/SignUp";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Students from "./components/Student/Students";
+
 
 export default function App() {
   return (

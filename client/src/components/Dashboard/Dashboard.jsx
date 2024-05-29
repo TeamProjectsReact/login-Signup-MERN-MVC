@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import  secureLocalStorage  from  "react-secure-storage";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {   
     const navigate = useNavigate()
@@ -16,7 +16,12 @@ const Dashboard = () => {
     <div className='bg-gray-200 py-16 md:px-20 px-8 min-h-screen'>
         <div className="bg-white py-8 md:px-12 px-4 rounded shadow-md">
             <h1 className="text-xl font-semibold text-gray-500">Dashboard</h1>
-            <p className="text-red-500 cursor-pointer" onClick={logout}>Logout</p>
+            <div className="flex">
+              <p className="text-red-500 cursor-pointer" onClick={logout}>Logout</p>
+              <Link to={'/Student'}><button className='bg-green-500 textw-white py-2 px-4 rounded show-md'>Add Student</button></Link>
+            </div>
+           
+
         </div>
     </div>
   )
