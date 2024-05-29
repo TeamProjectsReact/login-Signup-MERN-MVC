@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BsMortarboardFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const SignIn = () => {
     // for login data
@@ -13,8 +14,17 @@ const SignIn = () => {
     const headleSubmit = (e) => {
         e.preventDefault();
 
-        // login to system
-        // this will be updated in future versions
+        try{
+            const res = axios.post('http://localhost:5000/api/auth/SignIn', LoginData)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    
+                }
+            })
+        }
+        catch{
+
+        }
     }
   return (
     <div className='bg-gray-200 min-h-screen py-24 px-8'>
