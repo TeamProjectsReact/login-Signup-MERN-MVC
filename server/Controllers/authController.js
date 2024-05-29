@@ -60,13 +60,11 @@ const authController = {
         }
         else{
             // create a token for login
-            const token = jwt.sign({ userId: user._id, userEmail: user.email, userRole: user.Role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            const token = jwt.sign({ userId: checkuser._id, userEmail: checkuser.email, userRole: checkuser.Role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            
+            return res.json({Status: "Success", Token:token})            
         }
-        
-
-
-       
-
+     
     }
 }
 
