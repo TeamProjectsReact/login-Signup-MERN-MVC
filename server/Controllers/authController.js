@@ -53,7 +53,7 @@ const authController = {
         }
 
         // check the password
-        const passMatch = bcrypt.compare(password, checkuser.password);
+        const passMatch = await bcrypt.compare(password, checkuser.password);
 
         if(!passMatch) {
             return res.json({Error: "Password Not Match"})
