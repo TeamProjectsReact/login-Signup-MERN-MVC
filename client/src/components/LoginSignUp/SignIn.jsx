@@ -24,8 +24,8 @@ const SignIn = () => {
                     localStorage.setItem('token', res.data.Token)
                     navigate('/Dashboard')
                     // login user Email 
-                    secureLocalStorage.setItem('Login1', res.data.Result[0].email)
-                    secureLocalStorage.setItem('Login2', res.data.Result[0].Role)                    
+                    secureLocalStorage.setItem('Login1', res.data.Result.email)
+                    secureLocalStorage.setItem('Login2', res.data.Result.Role)                    
                 }
                 else{
                     alert(res.data.Error)
