@@ -7,6 +7,7 @@ const authController = {
     signUp: async (req, res) => {
         try {
             const {username, email, password} = req.body
+            // console.log(req.body)
             // chech user is already exists
             const isUserExists = await User.findOne({username, email})
 

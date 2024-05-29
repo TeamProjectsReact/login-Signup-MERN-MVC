@@ -13,19 +13,21 @@ const SignUp = () => {
     })
 
     // send data to backend using axios
-    const headleSubmit = (e) => {
+    const headleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/auth/Register', SignUpData)
-        .then(res => {
+        try {
+            const res = await axios.post('http://localhost:5000/api/auth/Register', SignUpData);
             if(res.data.Status === "Success"){
-                alert("User Registation Successfully")
+                alert("User Registation Successful")
                 navigate('/')
             }
             else{
                 alert(res.data.Error)
             }
-        })
+          } catch (err) {
+            alert(err)
+          }
 
     }
   return (
