@@ -21,7 +21,13 @@ const studentSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
-    }
+    },
+    fileName: {
+        type: String
+    },
+    path: {
+        type: String
+    } 
 })
 
 const Student = new mongoose.model('Student', studentSchema)
