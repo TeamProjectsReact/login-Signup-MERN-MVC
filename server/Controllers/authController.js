@@ -44,6 +44,23 @@ const authController = {
 
     SignIN: async (req, res) => {
         const {email, password} = req.body;
+
+        // check user enter data in database
+        const checkuser = await User.findOne({ email });
+
+        if(!checkuser) {
+            return res.json({Error: "No data Found...."})
+        }
+
+        // check the password
+        const passMatch = bcrypt.compare(password, checkuser.password);
+
+        if(!passMatch) {
+            return res.json({Error: "Password Not Match"})
+        }
+
+        
+
     }
 }
 
