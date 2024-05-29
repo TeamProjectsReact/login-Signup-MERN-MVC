@@ -8,7 +8,7 @@
 // module.exports = router;
 
 const express = require('express');
-const authController = require('../controllers/authController');
+const authController = require('../Controllers/authController');
 
 const router = express.Router();
 
