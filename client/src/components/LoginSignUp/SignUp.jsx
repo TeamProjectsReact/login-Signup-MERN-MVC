@@ -16,7 +16,7 @@ const SignUp = () => {
     const headleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:5000/auth/signUp', SignUpData)
+        axios.post('http://localhost:5000/auth/Register', SignUpData)
         .then(res => {
             if(res.data.Status === "Success"){
                 alert("User Registation Successfully")
