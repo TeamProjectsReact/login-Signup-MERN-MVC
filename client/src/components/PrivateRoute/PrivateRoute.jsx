@@ -15,10 +15,7 @@ const PrivateRoute = ({ ProtectRoute }) => {
         )
     }
     else{
-        useEffect(() => {
-            localStorage.clear()
-            navigate('/')
-        }, [])
+        localStorage.clear()
     }
 }
 
