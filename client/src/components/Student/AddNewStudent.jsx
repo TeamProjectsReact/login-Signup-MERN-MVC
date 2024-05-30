@@ -27,7 +27,7 @@ const AddNewStudent = () => {
                 <div className="md:grid grid-cols-3 gap-5">
                     <div className="">
                         <label htmlFor="">Registation Number: </label>
-                        <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200"  required placeholder='Enter Regisatation Number'/>
+                        <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'/>
                     </div>
                 </div>
             </div>
