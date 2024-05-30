@@ -28,9 +28,9 @@ const AddNewStudent = () => {
     const headleSubmit = async (e) => {
         e.preventDefault();
         const formDataObj = new FormData();
-        formDataObj.append('title', formData.title);
-        formDataObj.append('description', formData.description);
-        formDataObj.append('image', formData.image);
+        formDataObj.append('title', stdData.title);
+        formDataObj.append('description', stdData.description);
+        formDataObj.append('image', stdData.image);
 
         try{            
             const res = await axios.post('http://localhost:5000/api/Student/AddStudent', formDataObj)
