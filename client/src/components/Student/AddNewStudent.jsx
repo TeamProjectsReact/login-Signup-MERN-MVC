@@ -24,6 +24,32 @@ const AddNewStudent = () => {
         setFormData({ ...stdData, image: e.target.files[0] });
     };
 
+    // headleSubmit
+    const headleSubmit = async (e) => {
+        e.preventDefault();
+        const formDataObj = new FormData();
+        formDataObj.append('title', formData.title);
+        formDataObj.append('description', formData.description);
+        formDataObj.append('image', formData.image);
+
+        try{            
+            const res = await axios.post('http://localhost:5000/api/Student/AddStudent', formDataObj)
+            .then(res => {
+                if(res.data.Status === "Success"){
+                    alert("Student Added Successfull")
+                    navigate('/Dashboard')
+                    window.location.reload()
+                }
+                else{
+                    alert(res.data.Error)
+                }
+            })
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
   return (
     <div className='bg-gray-200 py-16 md:px-20 px-8 min-h-screen'>
         <div className="bg-white py-8 md:px-12 px-4 rounded shadow-md">
@@ -34,7 +60,7 @@ const AddNewStudent = () => {
         </div>
         <div className="bg-white py-8 md:px-12 px-4 rounded shadow-md my-4">
             <div className="text-gray-500">
-                <form action="">
+                <form onSubmit={headleSubmit}>
                     <div className="md:grid grid-cols-3 gap-5">
                         <div className="">
                             <label htmlFor="">Registation Number: </label>
@@ -63,7 +89,7 @@ const AddNewStudent = () => {
                         </div>
                     </div>
                     <div className="">
-                        <button className='bg-green-500 py-2 px-4 rounded text-white duration-500 hover:bg-green-600'>Add Student</button>
+                        <button type='submit' className='bg-green-500 py-2 px-4 rounded text-white duration-500 hover:bg-green-600'>Add Student</button>
                     </div>
                 </form>
             </div>
