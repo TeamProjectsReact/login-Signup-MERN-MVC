@@ -28,8 +28,10 @@ const AddNewStudent = () => {
     const headleSubmit = async (e) => {
         e.preventDefault();
         const formDataObj = new FormData();
-        formDataObj.append('title', stdData.title);
-        formDataObj.append('description', stdData.description);
+        formDataObj.append('regNo', stdData.RegID);
+        formDataObj.append('NIC', stdData.description);
+        formDataObj.append('fn', stdData.image);
+        formDataObj.append('ln', stdData.image);
         formDataObj.append('image', stdData.image);
 
         try{            
@@ -78,12 +80,12 @@ const AddNewStudent = () => {
                         </div>
                         <div className="">
                             <label htmlFor="">First Name : </label>
-                            <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter First Name'
+                            <input type="text" name="fn" id="fn" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter First Name'
                             onChange={handleInputChange} />
                         </div>
                         <div className="">
                             <label htmlFor="">Last Name : </label>
-                            <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
+                            <input type="text" name="ln" id="ln" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
                             onChange={handleInputChange} />
                         </div>
                         <div className="">

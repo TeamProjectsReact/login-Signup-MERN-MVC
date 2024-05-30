@@ -3,6 +3,7 @@ const StudentController = require('../Controllers/StudentController')
 
 const router = express.Router()
 
-router.post('/AddStudent', StudentController.AddStudent)
+router.post('/AddStudent', StudentController.StudentNew)
+
 
 module.exports = router

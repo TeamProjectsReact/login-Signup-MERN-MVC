@@ -8,15 +8,15 @@ const storage = multer.diskStorage({
       cb(null, 'uploads/');
     },
     filename: function (req, file, cb) {
-      cb(null, file.originalname);
+      cb(null, Date.now() + '-' + file.originalname);
     },
 });
 
 const AddStudent = multer({ storage }).single('image');
 
 
-const StudentController = (req, res) => {
-    AddStudent( async (req, res) => {
+const StudentNew = (req, res) => {
+    AddStudent.single('image')( async (req, res) => {
         const { RegID, NIC, fname, lname } = req.body
         const { image } = req.file;
         const imagePath = path.join(__dirname, '..', 'uploads', image);
@@ -42,4 +42,4 @@ const StudentController = (req, res) => {
 }
 
 
-module.exports = StudentController
+module.exports = { StudentNew }
