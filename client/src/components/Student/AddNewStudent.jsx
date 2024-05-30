@@ -33,7 +33,11 @@ const AddNewStudent = () => {
         formDataObj.append('image', stdData.image);
 
         try{            
-            const res = await axios.post('http://localhost:5000/api/Student/AddStudent', formDataObj)
+            const res = await axios.post('http://localhost:5000/api/Student/AddStudent', formDataObj, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            })
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Student Added Successfull")
