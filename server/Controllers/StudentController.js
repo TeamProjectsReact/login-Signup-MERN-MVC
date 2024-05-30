@@ -18,12 +18,16 @@ const upload = multer({ storage }).single('image');
 const StudentController = {
 
     AddStundet: async (req, res) => {
-        const { RegID, NIC, Fname, Lname } = req.body
-        const { filename } = req.file;
+        const { RegID, NIC, fname, lname } = req.body
+        const { image } = req.file;
         const imagePath = path.join(__dirname, '..', 'uploads', filename);
 
         const std = new Student({
-
+            RegID,
+            NIC,
+            fname,
+            lname,
+            image
         })
 
     },
