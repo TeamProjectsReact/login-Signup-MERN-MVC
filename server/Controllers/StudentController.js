@@ -31,6 +31,14 @@ const StudentController = {
             path: imagePath
         })
 
+        const stdResult = await std.save();
+        
+        if(ReusltUser) {
+            return res.json({Status: "Success"})
+        }
+        else{
+            return res.json({Error: "Internal Server ERROR"})
+        }
     },
 }
 
