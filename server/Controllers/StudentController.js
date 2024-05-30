@@ -17,7 +17,7 @@ const upload = multer({ storage }).single('image');
 
 const StudentController = {
 
-    AddStundet: async (req, res) => {
+    AddStudent: async (req, res) => {
         const { RegID, NIC, fname, lname } = req.body
         const { image } = req.file;
         const imagePath = path.join(__dirname, '..', 'uploads', filename);
@@ -32,7 +32,7 @@ const StudentController = {
         })
 
         const stdResult = await std.save();
-        
+
         if(ReusltUser) {
             return res.json({Status: "Success"})
         }
