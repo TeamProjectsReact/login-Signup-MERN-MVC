@@ -18,10 +18,10 @@ const AddNewStudent = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+        setFormData({ ...stdData, [name]: value });
     };
     const handleFileChange = (e) => {
-        setFormData({ ...formData, image: e.target.files[0] });
+        setFormData({ ...stdData, image: e.target.files[0] });
     };
 
   return (
@@ -39,23 +39,31 @@ const AddNewStudent = () => {
                         <div className="">
                             <label htmlFor="">Registation Number: </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'
-                            onChange={handleInputChange} value={formData.RegID}/>
+                            onChange={handleInputChange} value={stdData.RegID}/>
                         </div>
                         <div className="">
                             <label htmlFor="">NIC Number: </label>
                             <input type="text" name="NIC" id="NIC" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter NIC Number'
-                            onChange={handleInputChange} value={formData.NIC}/>
+                            onChange={handleInputChange} value={stdData.NIC}/>
                         </div>
                         <div className="">
                             <label htmlFor="">First Name : </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter First Name'
-                            onChange={handleInputChange} value={formData.fname}/>
+                            onChange={handleInputChange} value={stdData.fname}/>
                         </div>
                         <div className="">
                             <label htmlFor="">Last Name : </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
-                            onChange={handleInputChange} value={formData.lname}/>
+                            onChange={handleInputChange} value={stdData.lname}/>
                         </div>
+                        <div className="">
+                            <label htmlFor="">Profile Image : </label>
+                            <input type="file" name="image" id="image" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
+                            onChange={handleFileChange} value={stdData.image}/>
+                        </div>
+                    </div>
+                    <div className="">
+                        <button className='bg-green-500 py-2 px-4 rounded text-white duration-500 hover:bg-green-600'>Add Student</button>
                     </div>
                 </form>
             </div>
