@@ -12,11 +12,11 @@ const storage = multer.diskStorage({
     },
 });
 
-const AddStudent = multer({ storage }).single('image');
+const upload = multer({ storage }).single('image');
 
 
 const StudentNew = (req, res) => {
-    AddStudent.single('image')( async (req, res) => {
+    upload( async (req, res) => {
         const { RegID, NIC, fname, lname } = req.body
         const { image } = req.file;
         const imagePath = path.join(__dirname, '..', 'uploads', image);
