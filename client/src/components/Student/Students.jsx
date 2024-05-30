@@ -7,8 +7,12 @@ const Students = () => {
   return (
     <div className='bg-gray-200 py-16 md:px-20 px-8 min-h-screen'>
         <div className="bg-white py-8 md:px-12 px-4 rounded shadow-md">
+            <h1 className="text-xl font-semibold text-gray-500">Add New Student</h1>
+        </div>
+        <div className="bg-white py-8 md:px-12 px-4 rounded shadow-md my-4">
             <h1 className="text-xl font-semibold text-gray-500">Dashboard</h1>
         </div>
+
     </div>
   )
 }
