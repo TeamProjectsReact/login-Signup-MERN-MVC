@@ -3,7 +3,7 @@ import SignIn from "./components/LoginSignUp/SignIn";
 import SignUp from "./components/LoginSignUp/SignUp";
 import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Students from "./components/Student/Students";
+import AddNewStudent from "./components/Student/AddNewStudent";
 
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Dashboard" element={<PrivateRoute ProtectRoute={<Dashboard />}/>} />
-        <Route path="/Student" element={<PrivateRoute ProtectRoute={<Students />} />} />
+        <Route path="/AddStudent" element={<PrivateRoute ProtectRoute={<AddNewStudent />} />} />
       </Routes>   
     </BrowserRouter>
   )
