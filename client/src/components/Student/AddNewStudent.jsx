@@ -65,27 +65,27 @@ const AddNewStudent = () => {
                         <div className="">
                             <label htmlFor="">Registation Number: </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'
-                            onChange={handleInputChange} value={stdData.RegID}/>
+                            onChange={handleInputChange} />
                         </div>
                         <div className="">
                             <label htmlFor="">NIC Number: </label>
                             <input type="text" name="NIC" id="NIC" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter NIC Number'
-                            onChange={handleInputChange} value={stdData.NIC}/>
+                            onChange={handleInputChange} />
                         </div>
                         <div className="">
                             <label htmlFor="">First Name : </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter First Name'
-                            onChange={handleInputChange} value={stdData.fname}/>
+                            onChange={handleInputChange} />
                         </div>
                         <div className="">
                             <label htmlFor="">Last Name : </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
-                            onChange={handleInputChange} value={stdData.lname}/>
+                            onChange={handleInputChange} />
                         </div>
                         <div className="">
                             <label htmlFor="">Profile Image : </label>
                             <input type="file" name="image" id="image" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
-                            onChange={handleFileChange} value={stdData.image}/>
+                            onChange={handleFileChange} />
                         </div>
                     </div>
                     <div className="">
