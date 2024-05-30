@@ -18,7 +18,7 @@ const Dashboard = () => {
             <h1 className="text-xl font-semibold text-gray-500">Dashboard</h1>
             <div className="flex">
               <p className="text-red-500 cursor-pointer" onClick={logout}>Logout</p>
-              <Link to={'/Student'}><button className='bg-green-500 textw-white py-2 px-4 rounded show-md'>Add Student</button></Link>
+              <Link to={'/AddStudent'}><button className='bg-green-500 textw-white py-2 px-4 rounded show-md'>Add Student</button></Link>
             </div>
            
 
