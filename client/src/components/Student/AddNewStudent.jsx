@@ -12,7 +12,7 @@ const AddNewStudent = () => {
         NIC: '',
         fname: '',
         lname: '',
-        image: null
+        image: ''
     })
 
 
@@ -21,7 +21,7 @@ const AddNewStudent = () => {
         setFormData({ ...stdData, [name]: value });
     };
     const handleFileChange = (e) => {
-        setFormData({ ...stdData, image: e.target.files[0] });
+        setFormData({ ...stdData, image:e.target.files[0] });
     };
 
     // headleSubmit

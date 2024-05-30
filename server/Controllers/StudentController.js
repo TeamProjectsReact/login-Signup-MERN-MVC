@@ -20,7 +20,7 @@ const StudentController = {
     AddStudent: async (req, res) => {
         const { RegID, NIC, fname, lname } = req.body
         const { image } = req.file;
-        const imagePath = path.join(__dirname, '..', 'uploads', filename);
+        const imagePath = path.join(__dirname, '..', 'uploads', image);
 
         const std = new Student({
             RegID,
