@@ -27,7 +27,8 @@ const StudentController = {
             NIC,
             fname,
             lname,
-            image
+            image,
+            path: imagePath
         })
 
     },
