@@ -12,12 +12,11 @@ const storage = multer.diskStorage({
     },
 });
 
-const upload = multer({ storage }).single('image');
+const AddStudent = multer({ storage }).single('image');
 
 
-const StudentController = {
-
-    AddStudent: async (req, res) => {
+const StudentController = (req, res) => {
+    AddStudent( async (req, res) => {
         const { RegID, NIC, fname, lname } = req.body
         const { image } = req.file;
         const imagePath = path.join(__dirname, '..', 'uploads', image);
@@ -39,7 +38,8 @@ const StudentController = {
         else{
             return res.json({Error: "Internal Server ERROR"})
         }
-    },
+    });
 }
+
 
 module.exports = StudentController
