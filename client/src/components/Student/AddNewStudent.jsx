@@ -29,9 +29,9 @@ const AddNewStudent = () => {
         e.preventDefault();
         const formDataObj = new FormData();
         formDataObj.append('regNo', stdData.RegID);
-        formDataObj.append('NIC', stdData.description);
-        formDataObj.append('fn', stdData.image);
-        formDataObj.append('ln', stdData.image);
+        formDataObj.append('NIC', stdData.NIC);
+        formDataObj.append('fn', stdData.fname);
+        formDataObj.append('ln', stdData.lname);
         formDataObj.append('image', stdData.image);
 
         try{            
