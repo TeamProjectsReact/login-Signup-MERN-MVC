@@ -16,5 +16,5 @@ const storage = multer.diskStorage({
 
  const upload = multer({ storage });
 
- router.post('/AddStudent', StudentController.AddStudent)
+ router.post('/AddStudent', upload.single('image'), StudentController.AddStudent)
  
