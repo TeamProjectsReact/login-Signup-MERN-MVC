@@ -8,10 +8,7 @@ const AddNewStudent = () => {
     const navigate = useNavigate()
     // student data
     const [stdData, SetStdData] = useState({
-        RegID: '',
-        NIC: '',
-        fname: '',
-        lname: '',
+        title: '',
         image: ''
     })
 
@@ -71,21 +68,6 @@ const AddNewStudent = () => {
                         <div className="">
                             <label htmlFor="">Registation Number: </label>
                             <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'
-                            onChange={handleInputChange} />
-                        </div>
-                        <div className="">
-                            <label htmlFor="">NIC Number: </label>
-                            <input type="text" name="NIC" id="NIC" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter NIC Number'
-                            onChange={handleInputChange} />
-                        </div>
-                        <div className="">
-                            <label htmlFor="">First Name : </label>
-                            <input type="text" name="fn" id="fn" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter First Name'
-                            onChange={handleInputChange} />
-                        </div>
-                        <div className="">
-                            <label htmlFor="">Last Name : </label>
-                            <input type="text" name="ln" id="ln" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
                             onChange={handleInputChange} />
                         </div>
                         <div className="">
