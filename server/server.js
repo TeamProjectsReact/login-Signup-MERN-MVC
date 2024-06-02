@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const authRoutes = require('./Routes/authRoute');
-
+const StudentRoute = require('./Routes/StudentRoute');
 
 
 // app
@@ -23,7 +23,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // all routes
 app.use('/api/auth', authRoutes);
-
+app.use('/api/Student', StudentRoute);
 
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
