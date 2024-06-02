@@ -13,22 +13,11 @@ const AddNewStudent = () => {
     })
 
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...stdData, [name]: value });
-    };
-    const handleFileChange = (e) => {
-        setFormData({ ...stdData, image:e.target.files[0] });
-    };
-
     // headleSubmit
     const headleSubmit = async (e) => {
         e.preventDefault();
         const formDataObj = new FormData();
-        formDataObj.append('regNo', stdData.RegID);
-        formDataObj.append('NIC', stdData.NIC);
-        formDataObj.append('fn', stdData.fname);
-        formDataObj.append('ln', stdData.lname);
+        formDataObj.append('title', stdData.title);
         formDataObj.append('image', stdData.image);
 
         try{            
@@ -67,13 +56,13 @@ const AddNewStudent = () => {
                     <div className="md:grid grid-cols-3 gap-5">
                         <div className="">
                             <label htmlFor="">Registation Number: </label>
-                            <input type="text" name="regNo" id="regNo" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'
-                            onChange={handleInputChange} />
+                            <input type="text" name="title" id="title" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Regisatation Number'
+                            onChange={e => SetStdData({...stdData, title:e.target.value})} />
                         </div>
                         <div className="">
                             <label htmlFor="">Profile Image : </label>
                             <input type="file" name="image" id="image" className="w-full h-12 rounded bg-gray-200 pl-2 my-2"  required placeholder='Enter Last Name'
-                            onChange={handleFileChange} />
+                            onChange={e => SetStdData({...stdData, image:e.target.files[0]})} />
                         </div>
                     </div>
                     <div className="">
