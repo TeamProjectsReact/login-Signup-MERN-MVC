@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const authRoutes = require('./Routes/authRoute');
 const StudentRoute = require('./Routes/StudentRoute');
@@ -18,8 +19,9 @@ mongoose.connect(process.env.MONGODB_URI, {
 })
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/uploads', express.static('uploads'));
 
 // all routes
 app.use('/api/auth', authRoutes);
