@@ -13,7 +13,9 @@ const StudentController = {
 
         await newImage.save();
 
-        return res.json({Status: "Success"})
-        
+        return res.json({Status: "Success"})        
     }
 }
+
+
+module.exports = StudentController
