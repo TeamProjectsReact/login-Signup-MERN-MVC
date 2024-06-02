@@ -1,35 +1,9 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
-    RegID: {
-        type: String,
-        require: true,
-        unique: true
-    },
-    NIC: {
-        type: String,
-        require: true,
-        unique: true
-    },
-    Fname: {
-        type: String,
-        require: true,
-    },
-    Lname: {
-        type: String,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    fileName: {
-        type: String
-    },
-    path: {
-        type: String
-    } 
+const StudentSchema = new mongoose.Schema({
+
 })
 
-const Student = new mongoose.model('Student', studentSchema)
+const Students = mongoose.model('Students', StudentSchema)
 
-module.exports = Student
+module.exports = Students
