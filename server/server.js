@@ -27,7 +27,7 @@ app.use('/uploads', express.static('uploads'));
 // all routes
 app.use('/api/auth', authRoutes);
 app.use('/api/Student', StudentRoute);
-app.use('/Test', EmployeeRoute);
+app.use('/api/Test', EmployeeRoute);
 
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
