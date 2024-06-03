@@ -6,8 +6,9 @@ const EmployeeController = {
 
         // save data
         const NewData = new Employee({ content: dataUser })
-
-        if(NewData){
+        const SaveData = await NewData.save();
+        
+        if(SaveData){
             return res.json({Status: "Success"})
         }
         else{
