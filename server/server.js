@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const authRoutes = require('./Routes/authRoute');
 const StudentRoute = require('./Routes/StudentRoute');
+const EmployeeRoute = require('./Routes/EmployeeRoute');
 
 
 // app
@@ -26,6 +27,7 @@ app.use('/uploads', express.static('uploads'));
 // all routes
 app.use('/api/auth', authRoutes);
 app.use('/api/Student', StudentRoute);
+app.use('/Test', EmployeeRoute);
 
 app.listen(PORT, () => {
     console.log(`Server Running on PORT ${PORT}`)
