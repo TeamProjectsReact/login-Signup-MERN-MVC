@@ -57,6 +57,18 @@ const TextArea = () => {
 
                 </div>
             </form>
+
+
+        </div>
+
+        <div className="bg-white py-4 px-8 rounded shadow-md my-4">
+
+            All Data
+
+            <div className="my-4">
+                
+            </div>
+
         </div>
     </div>
   )
