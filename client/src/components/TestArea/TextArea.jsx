@@ -23,7 +23,7 @@ const TextArea = () => {
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Information Added Successfull")
-                    navigate('/Dashboard')
+                    window.location.reload()
                 }
                 else{
                     alert(res.data.Error)
