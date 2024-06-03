@@ -45,6 +45,14 @@ const TextArea = () => {
         .then(res => SetViewData(res.data.Result))
         .catch(err => console.log(err))
     }, [])
+
+
+    const checkForNewlines = (text) => {
+        return text.includes('\n');
+    };
+
+
+
   return (
     <div className='bg-gray-200 py-8 px-12 min-h-screen'>
         <div className="bg-white py-4 px-8 rounded shadow-md">
@@ -75,8 +83,17 @@ const TextArea = () => {
 
             All Data
 
-            <div className="my-4">
-
+            <div className="my-4">  
+            {
+                ViewUser.map((savedText, index) => (
+                    <div key={index}>
+                        {savedText.content.split('\n').map((line, i) => (
+                        <div key={i}>&#8226; {line}</div>
+                        ))}
+                        <hr />
+                    </div>
+                    
+            ))}
             </div>
 
         </div>
