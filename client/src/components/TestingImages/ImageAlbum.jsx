@@ -10,7 +10,7 @@ const ImageAlbum = () => {
 
     
   return (
-    <div className='bg-gray-200 py-8 px-12'>
+    <div className='bg-gray-200 py-8 px-12 min-h-screen'>
         <div className="bg-white py-8 px-12 rounded shadow-md">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quisquam quis eaque necessitatibus. Itaque placeat doloribus tenetur qui nemo fugit cupiditate. Officia ab quidem ex aspernatur harum ut quasi illo.
         </div>
