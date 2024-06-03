@@ -19,7 +19,7 @@ const TextArea = () => {
         console.log(userdata);
         
         try{
-            const res = await axios.post('http://localhost:5000/Test/AddTest', userdata)
+            const res = await axios.post('http://localhost:5000/api/Test/AddTest', userdata)
             .then(res => {
                 if(res.data.Status === "Success"){
                     alert("Information Added Successfull")
