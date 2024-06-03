@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AddNewStudent from "./components/Student/AddNewStudent";
 import ImageAlbum from "./components/TestingImages/ImageAlbum";
+import TextArea from "./components/TestArea/TextArea";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/Dashboard" element={<PrivateRoute ProtectRoute={<Dashboard />}/>} />
         <Route path="/AddStudent" element={<PrivateRoute ProtectRoute={<AddNewStudent />} />} />
         <Route path="/ImageAlbum" element={<PrivateRoute ProtectRoute={<ImageAlbum /> }/>} />
+        <Route path="/TextArea" element={<PrivateRoute ProtectRoute={<TextArea /> } />  } />
       </Routes>   
     </BrowserRouter>
   )
