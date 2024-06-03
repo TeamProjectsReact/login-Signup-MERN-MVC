@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 import  secureLocalStorage  from  "react-secure-storage";
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,6 +8,10 @@ const ImageAlbum = () => {
     const EmailUser = secureLocalStorage.getItem("Login1");
     const RoleUser = secureLocalStorage.getItem("Login2");
 
+    // image data
+    const [ImgData, SetImgData] = useState({
+        
+    })
     
   return (
     <div className='bg-gray-200 py-8 px-12 min-h-screen'>
@@ -15,7 +19,7 @@ const ImageAlbum = () => {
             <form>
                 <div className="">
                     <label htmlFor="" className="Images">Images</label>
-                    <input type="file" name="" id="" className="" />
+                    <input type="file" name="" id="" className="" multiple />
                 </div>
             </form>
         </div>
