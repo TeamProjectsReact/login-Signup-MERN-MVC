@@ -10,6 +10,8 @@ const TextArea = () => {
                     <textarea 
                         name=""
                         id=""
+                        className='bg-gray-200 w-full my-2 rounded h-40'
+                        style={{ resize: 'none' }}
                         >
                         
                     </textarea>
