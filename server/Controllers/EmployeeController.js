@@ -14,6 +14,16 @@ const EmployeeController = {
         else{
             return res.json({Error: "Internal Server Error"})
         }
+    },
+
+    GetInfoData: async (req, res) => {
+        const ViewData = await Employee.find()
+        if(ViewData){
+            return res.json({ Result: ViewData })
+        }
+        else{
+            return res.json({ Error: "Internal Server Error"})
+        }
     }
 }
 
