@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const TextArea = () => {
@@ -35,6 +35,16 @@ const TextArea = () => {
         }
 
     }
+
+
+    // fetch data
+    const [ViewUser, SetViewData] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/api/Test/GetTest')
+        .then(res => SetViewData(res.data.Result))
+        .catch(err => console.log(err))
+    }, [])
   return (
     <div className='bg-gray-200 py-8 px-12 min-h-screen'>
         <div className="bg-white py-4 px-8 rounded shadow-md">
@@ -66,7 +76,7 @@ const TextArea = () => {
             All Data
 
             <div className="my-4">
-                
+
             </div>
 
         </div>
